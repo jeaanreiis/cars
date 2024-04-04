@@ -1,6 +1,62 @@
 {% extends "base.html" %}
 
+{% block title %}Comprar{% endblock %}
+
 {% block content %}
+<main class="container">
+    <div class="mt-5 p-5" style="text-align: center;">
+        <img width="700px" src="./static/img/banner_anuncio.jpg" class="img-fluid" alt="...">
+    </div>
+    <div class="container mb-3">
+        <h1 class="texto-principal">Carros usados, seminovos e novos em todo o Brasil.</h1>
+    </div>
+    <div class="row gap-4">
+        <div class="card" style="width: 18rem;">
+            <img src="./static/img/relampago-mcqueen.png" class="card-img-top" alt="..."> <!--variavel de caminho python-->
+            <div class="card-body">
+                <h5 class="card-title">Relâmpago Mcqueen</h5> <!--variavel python-->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <!--variavel python-->
+                <hr>
+                <p class="card-text">R$ 200.000,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="./static/img/Mate.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Tom Mate</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <hr>
+                <p class="card-text">R$ 15.200,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="./static/img/Sally.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Sally Carrera</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <hr>
+                <p class="card-text">R$ 53.600,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="./static/img/Strip-Weathers.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Strip Weathers</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <hr>
+                <p class="card-text">R$ 120.000,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+</main>
 
 
 {% endblock %}

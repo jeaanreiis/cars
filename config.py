@@ -13,7 +13,7 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/foo.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:////database.db"
 
 class TestingConfig(Config):
     DEBUG = True
