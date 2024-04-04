@@ -13,8 +13,11 @@ def create_app(config_name):
     config[config_name].init_app(app)
 
     db.init_app(app)
+    bootstrap.init_app(app)
 
     from .auth import auth
+    from .main import routes
     app.register_blueprint(auth.bp)
+    app.register_blueprint(routes.bp)
 
     return app

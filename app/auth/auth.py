@@ -1,9 +1,11 @@
+from flask import render_template
+
 from . import bp
 
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
-    return 'Rota de login'
+    return render_template('login.html')
 
 
 @bp.route('/logout', methods=('GET', 'POST'))
