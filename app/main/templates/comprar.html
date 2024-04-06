@@ -8,28 +8,28 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="dadosModalLabel">Dados cadastrais</h5>
+          <h5 class="modal-title" id="dadosModalLabel">Dados pessoais</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="row mb-3">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nome completo" aria-label="Nome">
+                  {{ form.nome(type="text", class="form-control", placeholder="Nome completo") }}
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="xxx.xxx.xxx-xx" aria-label="CPF">
+                  {{ form.cpf(type="text", class="form-control cpf", placeholder="xxx.xxx.xxx-xx") }}
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                  <input type="tel" class="form-control" placeholder="(xx) x xxxx-xxxx" aria-label="Telefone">
+                  {{ form.telefone(type="tel", class="form-control phone", placeholder="(xx) xxxxx-xxxx") }}
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                  <input type="email" class="form-control" placeholder="email@host.com" aria-label="E-mail">
+                  {{ form.cpf(type="email", class="form-control", placeholder="email@host.com") }}
                 </div>
               </div>
 
@@ -52,7 +52,7 @@
     </div>
     <div class="row gap-4">
       {% for car in cat%}
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;"> 
             <img src="./static/img/{{ car.anexo }}" class="card-img-top" alt="..."> <!--variavel de caminho python-->
             <div class="card-body">
                 <h5 class="card-title">{{ car.nome }}</h5> <!--variavel python-->
@@ -72,4 +72,11 @@
 </main>
 
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $('.cpf').mask('000.000.000-00', {reverse: true});
+  $('.phone').mask('(00) 00000-0000');
+</script>
 {% endblock %}

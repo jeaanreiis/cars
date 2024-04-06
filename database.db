@@ -1,6 +1,1 @@
 UPDATE vendas SET anexo = 'relampago-mcqueen.png' WHERE id = 1;
-UPDATE vendas SET anexo = 'tom-mate.png' WHERE id = 2;
-UPDATE vendas SET anexo = 'sally.png' WHERE id = 3;
-UPDATE vendas SET anexo = 'strip-weathers.png' WHERE id = 4;
-
-

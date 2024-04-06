@@ -7,7 +7,16 @@
     <div class="pt-5">
         <h1 class="texto-principal p">Anuncie seu carro aqui.</h1>
     </div>
-    <form method="post" class="col-6">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li class="alert alert-light" role="alert">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post" class="col-6" enctype="multipart/form-data" >
 
         <div class="mb-3">
           {{ form.nome.label(for="nomeCarro") }}
@@ -23,7 +32,11 @@
         </div>
         <div class="mb-3">
           {{ form.valor.label(for="valorCarro") }}
-          {{ form.valor(type="text", class="form-control", id="valorCarro")}}
+          {{ form.valor(type="text", class="form-control money", id="valorCarro")}}
+        </div>
+        <div class="mb-3">
+          <label for="anexoCarro">Anexo</label>
+          <input type="file" id="anexoCarro" name="file" class="form-control"/>
         </div>
         <div class="mb-3">
           {{ form.descricao.label(for="descricaoCarro") }}
@@ -37,4 +50,10 @@
       </form>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+</script>
 {% endblock %}
