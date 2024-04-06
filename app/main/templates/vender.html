@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Vender{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="pt-5">
+        <h1 class="texto-principal p">Anuncie seu carro aqui.</h1>
+    </div>
+    <form method="post" class="col-6">
+
+        <div class="mb-3">
+          {{ form.nome.label(for="nomeCarro") }}
+          {{ form.nome(type="text", class="form-control", id="nomeCarro")}}
+        </div>
+        <div class="mb-3">
+          {{ form.modelo.label(for="modeloCarro") }}
+          {{ form.modelo(type="text", class="form-control", id="modeloCarro")}}
+        </div>
+        <div class="mb-3">
+          {{ form.marca.label(for="marcaCarro") }}
+          {{ form.marca(type="text", class="form-control form-select", id="marcaCarro")}}
+        </div>
+        <div class="mb-3">
+          {{ form.valor.label(for="valorCarro") }}
+          {{ form.valor(type="text", class="form-control", id="valorCarro")}}
+        </div>
+        <div class="mb-3">
+          {{ form.descricao.label(for="descricaoCarro") }}
+          {{ form.descricao(type="textArea", class="form-control", id="descricaoCarro", rows="3")}}
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="temosCheck1">
+          <label class="form-check-label" for="termosCheck1">Concordo com os termos</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Anunciar</button>
+      </form>
+</div>
+
+{% endblock %}

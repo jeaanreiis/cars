@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Comprar{% endblock %}
+
+{% block content %}
+  <!-- Modal -->
+  <div class="modal fade" id="dadosModal" tabindex="-1" aria-labelledby="dadosModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dadosModalLabel">Dados cadastrais</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nome completo" aria-label="Nome">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="xxx.xxx.xxx-xx" aria-label="CPF">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="tel" class="form-control" placeholder="(xx) x xxxx-xxxx" aria-label="Telefone">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="email" class="form-control" placeholder="email@host.com" aria-label="E-mail">
+                </div>
+              </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Voltar para a lista</button>
+          <button type="button" class="btn btn-primary">Comprar agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main class="container">
+    <div class="mt-5 p-5" style="text-align: center;">
+        <img width="700px" src="./static/img/banner_anuncio.jpg" class="img-fluid" alt="...">
+    </div>
+
+    <div class="container mb-3">
+        <h1 class="texto-principal">Carros usados, seminovos e novos em todo o Brasil.</h1>
+    </div>
+    <div class="row gap-4">
+      {% for car in cat%}
+        <div class="card" style="width: 18rem;">
+            <img src="./static/img/{{ car.anexo }}" class="card-img-top" alt="..."> <!--variavel de caminho python-->
+            <div class="card-body">
+                <h5 class="card-title">{{ car.nome }}</h5> <!--variavel python-->
+                <p class="card-text">{{ car.descricao }}</p> <!--variavel python-->
+                <hr>
+                <p class="card-text">R$ {{ car.valor }}</p>
+                
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dadosModal">
+                  Comprar</button>
+            </div>
+        </div>
+        
+        {% endfor %}
+      </div>
+
+</main>
+
+
+{% endblock %}

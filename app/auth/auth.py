@@ -1,18 +1,18 @@
 from flask import render_template
 
-from . import bp
+from . import bp_auth
 
 
-@bp.route('/login', methods=('GET', 'POST'))
+@bp_auth.route('/login', methods=('GET', 'POST'))
 def login():
     return render_template('login.html')
 
 
-@bp.route('/logout', methods=('GET', 'POST'))
+@bp_auth.route('/logout', methods=('GET', 'POST'))
 def logout():
     return 'Rota de logout/index'
 
 
-@bp.route('/register', methods=('GET', 'POST'))
+@bp_auth.route('/register', methods=('GET', 'POST'))
 def register():
     return 'Rota de registro'
