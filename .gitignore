@@ -1,5 +1,5 @@
 .venv/
-/home/jeancarlos/learning/carros/venv
+venv/
 
 *.pyc
 __pycache__/
