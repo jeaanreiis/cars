@@ -20,9 +20,22 @@ def index():
 
 @bp_routes.route('/comprar', methods=('GET', 'POST'))
 def compra():
-    form = CompraForm()
-
+    form = CompraForm(request.form)
     cat = Cars.query.all()
+    if request.method == 'POST':
+
+        dado = Buy()
+
+        dado.carro_id=None  #lógica para relacionamento
+        dado.nome=form.nome.data
+        dado.cpf=form.cpf.data
+        dado.telefone=form.telefone.data
+        dado.email=form.email.data
+
+        db.session.add(dado)
+        db.session.commit()
+
+        flash('Compra realizada com sucesso')
 
     return render_template('comprar.html', form=form, cat=cat)
 

@@ -7,8 +7,9 @@
   <div class="modal fade" id="dadosModal" tabindex="-1" aria-labelledby="dadosModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="dadosModalLabel">Dados pessoais</h5>
+        <form method="post" enctype="multipart/form-data">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dadosModalLabel">Dados pessoais</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -32,13 +33,14 @@
                   {{ form.cpf(type="email", class="form-control", placeholder="email@host.com") }}
                 </div>
               </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Voltar para a lista</button>
-          <button type="button" class="btn btn-primary">Comprar agora</button>
-        </div>
-      </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Voltar para a lista</button>
+              <button type="submit" class="btn btn-primary">Comprar agora</button>
+            </div>
+          </form>
+          </div>
     </div>
   </div>
 
@@ -51,7 +53,7 @@
         <h1 class="texto-principal">Carros usados, seminovos e novos em todo o Brasil.</h1>
     </div>
     <div class="row gap-4">
-      {% for car in cat%}
+      {% for car in cat %}
         <div class="card" style="width: 18rem;"> 
             <img src="./static/img/{{ car.anexo }}" class="card-img-top" alt="..."> <!--variavel de caminho python-->
             <div class="card-body">
@@ -61,7 +63,7 @@
                 <p class="card-text">R$ {{ car.valor }}</p>
                 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dadosModal">
+                <button type="button" name="carro" value="{{car.id}}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dadosModal">
                   Comprar</button>
             </div>
         </div>
